@@ -15,7 +15,8 @@ resource "azurerm_mariadb_server" "example" {
   backup_retention_days         = 7
   geo_redundant_backup_enabled  = false
   public_network_access_enabled = false
-  ssl_enforcement_enabled       = true
+  #test this i guess
+  ssl_enforcement_enabled = true
 }
 
 variable "admin_login" {

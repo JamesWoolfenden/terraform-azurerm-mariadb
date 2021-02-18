@@ -203,9 +203,13 @@ No Modules.
 | admin\_login | MariaDB admin username | `string` | `"mariadbadmin"` | no |
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | db\_name | n/a | `string` | `"mariadb_database"` | no |
+| resource\_group | Object that contains resource group details | `any` | n/a | yes |
 | server\_name | n/a | `string` | n/a | yes |
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| database | n/a |
+| server | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
