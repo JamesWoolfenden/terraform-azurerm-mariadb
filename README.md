@@ -34,24 +34,39 @@ No requirements.
 | Name | Version |
 |------|---------|
 | azurerm | n/a |
+| random | n/a |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [azurerm_mariadb_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_database) |
+| [azurerm_mariadb_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_server) |
+| [random_string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_name | Name of the storage account | `string` | `"marvelsa"` | no |
-| account\_replication\_type | (Required) Defines the type of replication to use for this storage account. Valid options are LRS, GRS, RAGRS and ZRS | `string` | `"LRS"` | no |
-| account\_tier | (Required) Defines the Tier to use for this storage account. Valid options are Standard and Premium. Changing this forces a new resource to be created | `string` | `"Standard"` | no |
-| common\_tags | A map of tags | `map(any)` | n/a | yes |
-| location | Azure Region to use, defaults to UK South | `string` | `"UK South"` | no |
-| resource\_group\_name | Name of resource group in which to deploy storage account. | `string` | `"marvel"` | no |
+| admin\_login | MariaDB admin username | `string` | `"lovelyhorses"` | no |
+| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| db\_name | n/a | `string` | `"mariadb_database"` | no |
+| db\_version | n/a | `string` | `"10.3"` | no |
+| resource\_group | Object that contains resource group details | `any` | n/a | yes |
+| server\_name | The name of the MariaDB server | `string` | `"mariadbisfine"` | no |
+| sku\_name | n/a | `string` | `"GP_Gen5_4"` | no |
+| storage\_mb | n/a | `number` | `102400` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| website | n/a |
-
+| database | n/a |
+| server | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects

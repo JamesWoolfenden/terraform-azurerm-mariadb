@@ -7,31 +7,24 @@ resource "azurerm_mariadb_server" "example" {
   administrator_login          = var.admin_login
   administrator_login_password = random_string.password.result
 
-  sku_name   = "B_Gen5_2"
-  storage_mb = 5120
-  version    = "10.2"
+  sku_name   = var.sku_name
+  storage_mb = var.storage_mb
+  version    = var.db_version
 
-  auto_grow_enabled             = true
-  backup_retention_days         = 7
-  geo_redundant_backup_enabled  = false
+  auto_grow_enabled            = true
+  backup_retention_days        = 7
+  geo_redundant_backup_enabled = false
+  #obvious test
   public_network_access_enabled = false
   #test this i guess
   ssl_enforcement_enabled = true
 }
 
-variable "admin_login" {
-  type        = string
-  description = "MariaDB admin username"
-  default     = "mariadbadmin"
-}
-
-
 #write to vault?
 resource "random_string" "password" {
-  length = 12
-}
-
-variable "server_name" {
-  type = string
-
+  length    = 12
+  min_upper = 1
+  min_lower = 1
+  number    = true
+  special   = true
 }

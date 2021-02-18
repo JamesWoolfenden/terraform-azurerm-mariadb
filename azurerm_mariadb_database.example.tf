@@ -5,7 +5,3 @@ resource "azurerm_mariadb_database" "example" {
   charset             = "utf8"
   collation           = "utf8_general_ci"
 }
-
-variable "db_name" {
-  default = "mariadb_database"
-}
