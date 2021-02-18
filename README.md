@@ -36,18 +36,6 @@ No requirements.
 | azurerm | n/a |
 | random | n/a |
 
-## Modules
-
-No Modules.
-
-## Resources
-
-| Name |
-|------|
-| [azurerm_mariadb_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_database) |
-| [azurerm_mariadb_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_server) |
-| [random_string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) |
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -67,6 +55,7 @@ No Modules.
 |------|-------------|
 | database | n/a |
 | server | n/a |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
