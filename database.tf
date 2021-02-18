@@ -7,5 +7,5 @@ resource "azurerm_mariadb_database" "example" {
 }
 
 variable "db_name" {
-  default="mariadb_database"
+  default = "mariadb_database"
 }
