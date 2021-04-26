@@ -13,12 +13,13 @@ resource "azurerm_mariadb_server" "example" {
 
   auto_grow_enabled            = true
   backup_retention_days        = 7
-  geo_redundant_backup_enabled = false
+  geo_redundant_backup_enabled = true
   #obvious test
   public_network_access_enabled = false
   #test this i guess
   ssl_enforcement_enabled = true
 }
+
 
 #write to vault?
 resource "random_string" "password" {

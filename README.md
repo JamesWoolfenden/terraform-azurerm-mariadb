@@ -33,40 +33,40 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
-| random | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_mariadb_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_database) |
-| [azurerm_mariadb_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_server) |
-| [random_string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) |
+| Name | Type |
+|------|------|
+| [azurerm_mariadb_database.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_database) | resource |
+| [azurerm_mariadb_server.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_server) | resource |
+| [random_string.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| admin\_login | MariaDB admin username | `string` | `"lovelyhorses"` | no |
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| db\_name | n/a | `string` | `"mariadb_database"` | no |
-| db\_version | n/a | `string` | `"10.3"` | no |
-| resource\_group | Object that contains resource group details | `any` | n/a | yes |
-| server\_name | The name of the MariaDB server | `string` | `"mariadbisfine"` | no |
-| sku\_name | n/a | `string` | `"GP_Gen5_4"` | no |
-| storage\_mb | n/a | `number` | `102400` | no |
+| <a name="input_admin_login"></a> [admin\_login](#input\_admin\_login) | MariaDB admin username | `string` | `"lovelyhorses"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_db_name"></a> [db\_name](#input\_db\_name) | n/a | `string` | `"mariadb_database"` | no |
+| <a name="input_db_version"></a> [db\_version](#input\_db\_version) | n/a | `string` | `"10.3"` | no |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Object that contains resource group details | `any` | n/a | yes |
+| <a name="input_server_name"></a> [server\_name](#input\_server\_name) | The name of the MariaDB server | `string` | `"mariadbisfine"` | no |
+| <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | n/a | `string` | `"GP_Gen5_4"` | no |
+| <a name="input_storage_mb"></a> [storage\_mb](#input\_storage\_mb) | n/a | `number` | `102400` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| database | n/a |
-| server | n/a |
+| <a name="output_database"></a> [database](#output\_database) | n/a |
+| <a name="output_server"></a> [server](#output\_server) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
