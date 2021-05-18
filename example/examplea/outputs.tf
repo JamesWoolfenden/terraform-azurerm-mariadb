@@ -3,5 +3,6 @@ output "database" {
 }
 
 output "server" {
-  value = module.mariadb.server
+  value     = module.mariadb.server
+  sensitive = true
 }

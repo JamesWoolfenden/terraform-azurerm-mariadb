@@ -3,5 +3,6 @@ output "database" {
 }
 
 output "server" {
-  value = azurerm_mariadb_server.example
+  value     = azurerm_mariadb_server.example
+  sensitive = true
 }

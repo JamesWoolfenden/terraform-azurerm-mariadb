@@ -1,0 +1,4 @@
+version: 0.1
+resource_usage:
+  module.mariadb.azurerm_mariadb_server.example:
+    additional_backup_storage_gb: 0
