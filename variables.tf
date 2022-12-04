@@ -47,3 +47,8 @@ variable "sku_name" {
   type    = string
   default = "GP_Gen5_4"
 }
+
+variable "configs" {
+  type = map(any)
+
+}

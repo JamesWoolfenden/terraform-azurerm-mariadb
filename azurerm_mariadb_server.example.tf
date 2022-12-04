@@ -11,13 +11,11 @@ resource "azurerm_mariadb_server" "example" {
   storage_mb = var.storage_mb
   version    = var.db_version
 
-  auto_grow_enabled            = true
-  backup_retention_days        = 7
-  geo_redundant_backup_enabled = true
-  #obvious test
+  auto_grow_enabled             = true
+  backup_retention_days         = 7
+  geo_redundant_backup_enabled  = true
   public_network_access_enabled = false
-  #test this i guess
-  ssl_enforcement_enabled = true
+  ssl_enforcement_enabled       = true
 }
 
 
@@ -26,6 +24,6 @@ resource "random_string" "password" {
   length    = 12
   min_upper = 1
   min_lower = 1
-  number    = true
+  numeric   = true
   special   = true
 }

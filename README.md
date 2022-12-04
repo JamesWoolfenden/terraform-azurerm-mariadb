@@ -44,7 +44,9 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurerm_mariadb_configuration.pike](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_configuration) | resource |
 | [azurerm_mariadb_database.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_database) | resource |
+| [azurerm_mariadb_firewall_rule.pike](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_firewall_rule) | resource |
 | [azurerm_mariadb_server.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mariadb_server) | resource |
 | [random_string.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
@@ -54,9 +56,11 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_admin_login"></a> [admin\_login](#input\_admin\_login) | MariaDB admin username | `string` | `"lovelyhorses"` | no |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_configs"></a> [configs](#input\_configs) | n/a | `map(any)` | n/a | yes |
 | <a name="input_db_name"></a> [db\_name](#input\_db\_name) | n/a | `string` | `"mariadb_database"` | no |
 | <a name="input_db_version"></a> [db\_version](#input\_db\_version) | n/a | `string` | `"10.3"` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Object that contains resource group details | `any` | n/a | yes |
+| <a name="input_rules"></a> [rules](#input\_rules) | n/a | `map(any)` | n/a | yes |
 | <a name="input_server_name"></a> [server\_name](#input\_server\_name) | The name of the MariaDB server | `string` | `"mariadbisfine"` | no |
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | n/a | `string` | `"GP_Gen5_4"` | no |
 | <a name="input_storage_mb"></a> [storage\_mb](#input\_storage\_mb) | n/a | `number` | `102400` | no |
@@ -74,6 +78,45 @@ No modules.
 This is the policy required to build this project:
 
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
+The Terraform resource required is:
+
+```golang
+
+resource "azurerm_role_definition" "terraform_pike" {
+  role_definition_id = local.uuid
+  name               = "terraform_pike"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions = [
+    "Microsoft.DBforMariaDB/servers/configurations/read",
+    "Microsoft.DBforMariaDB/servers/configurations/write",
+    "Microsoft.DBforMariaDB/servers/databases/delete",
+    "Microsoft.DBforMariaDB/servers/databases/read",
+    "Microsoft.DBforMariaDB/servers/databases/write",
+    "Microsoft.DBforMariaDB/servers/delete",
+    "Microsoft.DBforMariaDB/servers/firewallRules/delete",
+    "Microsoft.DBforMariaDB/servers/firewallRules/read",
+    "Microsoft.DBforMariaDB/servers/firewallRules/write",
+    "Microsoft.DBforMariaDB/servers/read",
+    "Microsoft.DBforMariaDB/servers/write"]
+    not_actions = []
+  }
+
+  assignable_scopes = [
+    data.azurerm_subscription.primary.id,
+  ]
+}
+
+locals {
+  uuid = uuid()
+}
+
+data "azurerm_subscription" "primary" {
+}
+
+
+```
 <!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
 
 ## Related Projects
